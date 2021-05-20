@@ -5,8 +5,8 @@ import MovieReview from './MovieReview'
 const MovieReviews = ({reviews}) => {
     return (
         <div className="review-list">
-            {reviews.map((review, i) => {
-                        return <div>
+            {reviews === null ? "No results" : reviews.map((review, i) => {
+                        return <div key={review.display_title} className="review">
                             <MovieReview
                                 imgSrc={review.multimedia.src}
                                 title={review.display_title}
